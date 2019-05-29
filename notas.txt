@@ -1,0 +1,42 @@
+https://www.tutorialspoint.com/mongodb/mongodb_insert_document.htm
+
+instalar Mongo
+sudo apt-get update
+sudo apt install mongodb
+sudo apt-get install -y mongodb-org
+sudo systemctl start mongodb
+sudo systemctl status mongodb
+mongo
+MongoDB shell version v3.6.3
+connecting to: mongodb://127.0.0.1:27017 => Esto ira ala coneccion de Nodejs
+use mydb --Crea la Base de datos
+show dbs --Vemos las base de datos
+show collections --vemos Tablas(Sql)
+Apartir de ahi la base de datos sera "db"
+db --Veremos en que base de datos estamos.
+db.createCollection("productos") => Tabla
+=>{ "ok" : 1 }
+db.productos.insert({_id:"1","nombre":"Papa"})
+=>WriteResult({ "nInserted" : 1 })
+db.productos.find({"nombre":"Papa"}) =>seria pos uno
+db.productos.find({"nombre":"Papa","stock":"50"}) Mismo que AND en Mysql
+db.customers.find().limit(5)=> con limite
+db.customers.find({name: /^S/}) => Likte Inician con S
+db.customers.find().sort({name:1}) ordenar por el nombre de manera ASC si es -1 DESC
+db.customers.find().sort({name:1,address:1})
+db.products.remove({"name":"Tasty Lemon"})=>Elinar un Registro
+db.customers.drop() =>Elimina la coleccion o Tabla
+db.dropDatabase() => primero hacemos el use mydb y luego la sentencia
+llamar un scrip
+creamos la carpeta.
+mkdir app
+cd app
+npm init
+si existe un package.sjon solo ponemos npm install
+caso contrario npm install express --save
+Caso de los scritp
+*npm run start
+*npm run dev
+
+
+https://github.com/FaztWeb/mern-stack-tasks
